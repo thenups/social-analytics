@@ -344,7 +344,7 @@ plt.show() #show plot
 ```
 
 
-![png](output_8_0.png)
+![png](resources/output_8_0.png)
 
 
 ## Overall Media Sentiment
@@ -374,7 +374,7 @@ plt.show()
 ```
 
 
-![png](output_10_0.png)
+![png](resources/output_10_0.png)
 
 
 
