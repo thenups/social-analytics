@@ -315,6 +315,13 @@ mergedCompDF.head()
 
 
 ```python
+# Import modules
+import datetime
+
+# Set up propper date
+now = datetime.datetime.now()
+date = '({}/{}/{})'.format(now.month, now.day, now.year) #add date to title
+
 # Set color scheme
 deep=["#C44E52", "#55A868", "#4C72B0", "#8172B2", "#CCB974", "#64B5CD"]
 
@@ -325,7 +332,7 @@ axCNN = mergedCompDF.plot(kind='scatter', x='Number of Tweets Ago', y='CNN', col
 axFOX = mergedCompDF.plot(kind='scatter', x='Number of Tweets Ago', y='Fox', color=deep[3], ax=axBBC, label='Fox', s=100, linewidths = 1, edgecolors = 'k', alpha=0.8)    
 axNYT = mergedCompDF.plot(kind='scatter', x='Number of Tweets Ago', y='NYT', color=deep[4], ax=axBBC, label='NYT', s=100, linewidths = 1, edgecolors = 'k', alpha=0.8)    
 
-plt.title('Sentiment Analysis of Media Tweets',fontsize=18) #Create graph title
+plt.title('Sentiment Analysis of Media Tweets {}'.format(date),fontsize=18) #Create graph title
 plt.xlabel('Tweets Ago', fontsize=14) #Create x-axis label
 plt.ylabel('Tweet Polarity', fontsize=14) #Create y-axis label
 plt.tick_params(axis='both', labelsize=12) #Format Axis
@@ -337,7 +344,7 @@ plt.show() #show plot
 ```
 
 
-![png](resources/output_8_0.png)
+![png](output_8_0.png)
 
 
 ## Overall Media Sentiment
@@ -356,7 +363,7 @@ ax = mediaOutletDF.plot.bar(subplots=True,
                             linewidth = 1,
                             edgecolor = 'k')
 
-plt.title('Sentiment Analysis of Media Tweets',fontsize=18) #Create graph title
+plt.title('Sentiment Analysis of Media Tweets {}'.format(date),fontsize=18) #Create graph title
 plt.xlabel('Media Accounts', fontsize=14) #Create x-axis label
 plt.ylabel('Tweet Polarity', fontsize=14) #Create y-axis label
 plt.tick_params(axis='both', labelsize=12) #Format Axis
@@ -367,4 +374,10 @@ plt.show()
 ```
 
 
-![png](resources/output_10_0.png)
+![png](output_10_0.png)
+
+
+
+```python
+
+```
